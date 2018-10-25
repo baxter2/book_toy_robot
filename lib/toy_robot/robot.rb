@@ -5,11 +5,11 @@ module ToyRobot
     end
   
     def move
-      
+      @position += 1
     end
 
     def position
-      3
+      @position
     end
   end
 end
