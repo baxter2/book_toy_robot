@@ -1,11 +1,11 @@
 require "spec_helper"
 
 describe ToyRobot::Robot do
-  subject { ToyRobot::Robot.new(0) }
+  subject { ToyRobot::Robot.new(0) } #=> Given
  
   it "moves 3 spaces east" do
-    3.times { subject.move_east }
-    expect(subject.east).to eq(3)
+    3.times { subject.move_east }    #=> When
+    expect(subject.east).to eq(3)    #=> Then
   end
 
   it "moves 4 spaces east" do
@@ -44,3 +44,11 @@ describe ToyRobot::Robot do
   end
 end
 
+context "when facing north" do
+  subject { ToyRobot::Robot.new(0, 0, "NORTH") } #=> Given
+
+  it "moves north" do
+    subject.move                                 #=> When
+    expect(subject.north).to eq(1)               #=> Then
+  end
+end
