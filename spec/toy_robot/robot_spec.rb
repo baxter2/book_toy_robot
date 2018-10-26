@@ -52,3 +52,12 @@ context "when facing north" do
     expect(subject.north).to eq(1)               #=> Then
   end
 end
+
+context "when facing south" do
+  subject { ToyRobot::Robot.new(0, 0, "SOUTH") } 
+
+  it "moves south" do
+    subject.move                                 
+    expect(subject.north).to eq(-1)               
+  end
+end
