@@ -6,8 +6,8 @@ module ToyRobot
     end
 
     def valid_location?(east, north)
-      east >= 0 && east < @width &&
-      north >= 0 && north < @length
+      (0...@width).cover?(east) &&
+      (0...@length).cover?(north)
     end
   end
 end
